@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pill Reminder App</title>
+    <link rel="stylesheet" href="add.css">
+</head>
+<body>
+    <div class="container">
+        <div class="pill-list">
+            <header>
+                <h1>october</h1>
+                <img src="profile.jpg" alt="User" class="user-icon">
+            </header>
+            <div class="pill-item" onclick="showPillDetails('Lexapro 150mg', '9:30 PM')">
+                <div class="pill-info">
+                    <span class="pill-name">Ibuprofen 50mg</span>
+                    <span class="pill-time">7:30 PM</span>
+                </div>
+                <div class="pill-actions">
+                    <img src="edit.jpeg" alt="Edit">
+                    <button onclick="Delete()">Delete</button>
+                </div>
+            </div>
+            <div class="pill-item" onclick="showPillDetails('Aspirin L 20mg', '8:15 PM')">
+                <div class="pill-info">
+                    <span class="pill-name">Aspirin L 20mg</span>
+                    <span class="pill-time">8:15 PM</span>
+                </div>
+                <div class="pill-actions">
+                    <img src="edit.jpeg" alt="Edit">
+                    <button onclick="Delete()">Delete</button>
+                </div>
+            </div>
+            <div class="pill-item" onclick="showPillDetails('Lexapro 150mg', '9:30 PM')">
+                <div class="pill-info">
+                    <span class="pill-name">Lexapro 150mg</span>
+                    <span class="pill-time">9:30 PM</span>
+                </div>
+                <div class="pill-actions">
+                    <img src="edit.jpeg" alt="Edit">
+                    <button onclick="Delete()">Delete</button>
+                </div>
+            </div>
+            <div class="pill-item" onclick="showPillDetails('Doliprane 1000mg', '11:20 PM')">
+                <div class="pill-info">
+                    <span class="pill-name">Doliprane 1000mg</span>
+                    <span class="pill-time">11:20 PM</span>
+                </div>
+                <div class="pill-actions">
+                    <img src="edit.jpeg" alt="Edit">
+                    <button onclick="Delete()">Delete</button>
+                </div>
+            </div>
+        </div>
+        <div class="pill-details">
+            <button onclick="goBack()">←</button>
+            <div id="pill-detail-content">
+                <!-- Pill details will be dynamically loaded here -->
+            </div>
+        </div>
+    </div>
+    <script src="add.js"></script>
+</body>
+</html>

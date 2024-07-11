@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emergency Call Log</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('D:\call.jpg'); /* Replace with your background image URL */
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: #fff;
+        }
+        .container {
+            background-color: #99e4f8b4;
+            padding: 20px;
+            border-radius: 8px;
+            width: 400px;
+            max-width: 100%;
+            box-shadow: 0 0 10px rgba(67, 67, 67, 0.5);
+            
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+            color:#678891b4;
+
+        }
+        .phone-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 20px 0;
+        }
+        .phone-list li {
+            padding: 10px;
+            background-color: #ffffff;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color:rgb(0, 0, 0);
+        }
+        .phone-list li span {
+            flex-grow: 1;
+        }
+        .phone-list li button {
+            background-color: #64cddf;
+            color: #1a1919;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .input-group {
+            display: flex;
+            margin-bottom: 20px;
+        }
+        .input-group input {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            border-radius: 4px 0 0 4px;
+            outline: none;
+        }
+        .input-group button {
+            padding: 10px;
+            border: none;
+            background-color: #80d5ed;
+            color: #292929;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h2>Emergency Call Log</h2>
+        </div>
+        <ul class="phone-list" id="phone-list">
+            <li><span>911</span> <button onclick="makeCall('911')">Call</button></li>
+            <li><span>112</span> <button onclick="makeCall('112')">Call</button></li>
+            <li><span>123-456-7890</span> <button onclick="makeCall('123-456-7890')">Call</button></li>
+        </ul>
+        <div class="input-group">
+            <input type="text" id="phone-input" placeholder="Add new number">
+            <button onclick="addPhoneNumber()">Add</button>
+        </div>
+    </div>
+
+    <script>
+        function addPhoneNumber() {
+            var inputField = document.getElementById('phone-input');
+            var phoneNumber = inputField.value.trim();
+            if (phoneNumber === "") return;
+
+            var phoneList = document.getElementById('phone-list');
+            var newPhoneItem = document.createElement('li');
+            newPhoneItem.innerHTML = '<span>' + phoneNumber + '</span> <button onclick="makeCall(\'' + phoneNumber + '\')">Call</button>';
+            phoneList.appendChild(newPhoneItem);
+
+            inputField.value = "";
+        }
+
+        function makeCall(number) {
+            alert('Calling ' + number);
+        }
+    </script>
+</body>
+</html>
